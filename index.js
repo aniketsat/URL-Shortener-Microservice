@@ -9,15 +9,14 @@ const app = express();
 
 // Basic Configuration
 const port = process.env.PORT || 3000;
-const MONGO_URI =
-  "mongodb+srv://aniketsat:aniketsat123@cluster0.c8tgsgc.mongodb.net/urlshortener?retryWrites=true&w=majority";
+const MONGO_URI = process.env.MONGO_URI;
 mongoose.connect(
   MONGO_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
-  () => console.log("Connected to " + MONGO_URI)
+  () => console.log("Connected to DB")
 );
 
 // Schema
